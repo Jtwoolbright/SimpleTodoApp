@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(KEY_ITEM_POSITION, position);
                 // display the new activity
                 startActivityForResult(i, EDIT_TEXT_CODE);
+
             }
         };
 
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             itemsAdapter.notifyItemChanged(position);
             // persist the changes
             Toast.makeText(getApplicationContext(), "Item was changed", Toast.LENGTH_SHORT).show();
+            saveItems();
         }
         else {
             Log.w("MainActivity", "Unknown call to onActivityResult");
